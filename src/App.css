@@ -1,3 +1,7 @@
+body {
+  font-family: Helvetica, Arial;
+}
+
 .App {
   text-align: center;
 }
@@ -35,11 +39,4 @@
   to {
     transform: rotate(360deg);
   }
-}
-
-.bigtext {
-  font-family: Helvetica, Arial;
-}
-.bigtext > p {
-  line-height: 0.95em;
 }
