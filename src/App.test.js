@@ -1,9 +1,23 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import App from './App';
+import React from "react";
+import { render } from "@testing-library/react";
+import App from "./App";
+import { getByText } from "@testing-library/dom";
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe("Main Page", () => {
+  test("renders main message", () => {
+    const { container } = render(<App />);
+    const element = getByText(
+      container,
+      /a Nigéria é o país com maior população negra no mundo./i
+    );
+
+    expect(element).toBeInTheDocument();
+  });
+
+  test("renders secondary message", () => {
+    const { container } = render(<App />);
+    const element = getByText(container, /o segundo maior, é o Brasil./i);
+
+    expect(element).toBeInTheDocument();
+  });
 });
